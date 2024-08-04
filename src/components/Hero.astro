@@ -1,0 +1,10 @@
+---
+import code from "../../public/Code typing-amico.png";
+import Image from "astro/components/Image.astro";
+import Identity from "./identity";
+---
+
+<div class="bg-background flex justify-center items-center row-span-16">
+  <Identity name="Eyad Ahmed" job="front-end developer" client:load />
+  <Image src={code} alt="code" class="w-[35%]" />
+</div>

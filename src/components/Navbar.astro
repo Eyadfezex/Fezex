@@ -1,6 +1,6 @@
 ---
-import Link from "./Link.astro";
-import NavigationLinks from "./NavigationLinks.astro";
+import Link from "./Link.jsx";
+import NavigationLinks from "./NavigationLinks.jsx";
 const { name } = Astro.props;
 ---
 
@@ -10,7 +10,7 @@ const { name } = Astro.props;
   <p class="bg-background flex items-center text-[14px] pl-[22px] col-span-2">
     {name}
   </p>
-  <NavigationLinks client:visible />
+  <NavigationLinks client:only />
   <div class="bg-background col-span-6"></div>
-  <Link to="./contacts" label="_contacts-me" client:visible />
+  <Link to="./contacts" label="_contacts-me" client:only />
 </nav>

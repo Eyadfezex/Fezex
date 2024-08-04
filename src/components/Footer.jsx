@@ -4,10 +4,7 @@ import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 
-interface PROPS {
-  label: string;
-}
-const Footer = ({ label }: PROPS) => {
+const Footer = ({ label }) => {
   return (
     <footer className="bg-Code grid grid-cols-12 w-full text-Code font-fira gap-[1px] py-[1px]">
       <p className="bg-background flex items-center text-[14px] justify-center text-center">
