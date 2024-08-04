@@ -2,6 +2,7 @@ import SocialMediaLink from "./socialMediaLink";
 import { FaFacebookF } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 
 interface PROPS {
   label: string;
@@ -18,12 +19,16 @@ const Footer = ({ label }: PROPS) => {
         to="https://www.linkedin.com/in/eyad-ahmed-13382a273/"
         icon={<FaLinkedin />}
       />
-      <div className="bg-background col-span-8"></div>
+      <SocialMediaLink
+        to="https://www.instagram.com/eyad_ahmed_550/"
+        icon={<FaInstagram />}
+      />
+      <div className="bg-background col-span-7"></div>
       <a
         href="https://github.com/Eyadfezex"
         target="_blank"
         rel="noopener noreferrer"
-        className=" col-span-1 bg-background flex justify-center items-center gap-1"
+        className=" col-span-1 bg-background flex justify-center items-center gap-1 hover:text-white duration-200"
       >
         <p>@Eyadfezex</p>
         <FaGithub />
