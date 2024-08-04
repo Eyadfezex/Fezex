@@ -10,7 +10,9 @@ interface PROPS {
 const Footer = ({ label }: PROPS) => {
   return (
     <footer className="bg-Code grid grid-cols-12 w-full text-Code font-fira gap-[1px] py-[1px]">
-      <p className="bg-background py-2 pl-[22px]">{label}</p>
+      <p className="bg-background flex items-center text-[14px] justify-center text-center">
+        {label}
+      </p>
       <SocialMediaLink
         to="https://www.facebook.com/profile.php?id=100060985816360"
         icon={<FaFacebookF />}
@@ -28,7 +30,7 @@ const Footer = ({ label }: PROPS) => {
         href="https://github.com/Eyadfezex"
         target="_blank"
         rel="noopener noreferrer"
-        className=" col-span-1 bg-background flex justify-center items-center gap-1 hover:text-white duration-200"
+        className=" col-span-1 bg-background flex justify-center items-center gap-1  hover:text-white duration-200"
       >
         <p>@Eyadfezex</p>
         <FaGithub />
