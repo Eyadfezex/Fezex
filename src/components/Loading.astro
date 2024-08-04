@@ -18,10 +18,13 @@
   </div>
 </div>
 <script is:inline>
-  const terminal = document.querySelector(".loading");
-  window.onload = function () {
-    terminal.classList.add("hidden");
-  };
+  document.addEventListener("DOMContentLoaded", () => {
+    const terminal = document.querySelector(".loading");
+    setTimeout(() => {
+      terminal.classList.add("hidden");
+      terminal.classList.remove("block");
+    }, 1000);
+  });
 </script>
 
 <style>
