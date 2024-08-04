@@ -1,0 +1,14 @@
+---
+import Link from "./Link";
+import NavigationLinks from "./NavigationLinks";
+const { name } = Astro.props;
+---
+
+<nav
+  class="bg-Code grid grid-cols-12 w-full text-Code font-fira gap-[1px] py-[1px]"
+>
+  <p class="bg-background py-2 pl-[22px] col-span-2">{name}</p>
+  <NavigationLinks client:only />
+  <div class="bg-background col-span-6"></div>
+  <Link to="./contacts" label="_contacts-me" client:only />
+</nav>
