@@ -1,4 +1,8 @@
-const SocialMediaLink = ({ icon, to }) => {
+interface SocialMediaLinkProps {
+  icon: React.ReactNode;
+  to: string;
+}
+const SocialMediaLink = ({ icon, to }: SocialMediaLinkProps) => {
   return (
     <a
       href={to}
