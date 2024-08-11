@@ -1,5 +1,3 @@
-import { Code } from "astro:components";
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -14,8 +12,10 @@ export default {
       colors: {
         background: "#011627",
         Code: "#607B96",
-        var: "#4D5BCE",
+        var: "#C98BDF",
         btn: "#FEA55F",
+        Cbg: "#011321",
+        at: "#4D5BCE",
       },
       fontFamily: {
         fira: ['"Fira Code"', "monospace"],
