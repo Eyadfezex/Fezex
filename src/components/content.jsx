@@ -11,7 +11,7 @@ const ContentJson = () => {
       <img src={green.src} alt="green" className="absolute" />
       <img
         src={blue.src}
-        alt="green"
+        alt="blue"
         className="absolute top-[-10rem] left-[-15rem]"
       />
       <div className="rounded-lg bg-Cbg p-[1em] relative w-[70%] ">

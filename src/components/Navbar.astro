@@ -5,12 +5,22 @@ const { name } = Astro.props;
 ---
 
 <nav
-  class="bg-Code grid grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 w-full text-Code font-fira gap-[1px] py-[1px] border-x border-x-Code"
+  class="bg-Code grid md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 w-full text-Code font-fira gap-[1px] py-[1px] border-x border-x-Code"
 >
-  <p class="bg-background flex items-center text-[14px] pl-[22px] col-span-2">
+  <p
+    class="bg-background flex items-center text-[16px] lg:text-[14px] pl-[22px] col-span-2"
+  >
     {name}
   </p>
   <NavigationLinks client:only />
-  <div class="bg-background col-span-2 lg:col-span-4 xl:col-span-6"></div>
-  <Link to="./contacts" label="_contacts-me" client:only />
+  <div
+    class="bg-background hidden lg:block col-span-2 lg:col-span-4 xl:col-span-6"
+  >
+  </div>
+  <Link
+    to="./contacts"
+    label="_contacts-me"
+    className="hidden lg:flex"
+    client:only
+  />
 </nav>

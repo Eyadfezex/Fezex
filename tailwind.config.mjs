@@ -5,6 +5,7 @@ export default {
     extend: {
       gridRow: {
         "span-16": "span 16 / span 16",
+        "span-17": "span 17 / span 17",
       },
       gridTemplateRows: {
         18: "repeat(18,minmax(0,1fr))",
