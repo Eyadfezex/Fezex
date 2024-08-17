@@ -9,19 +9,19 @@ const ContentJson = () => {
   const isPosition = useStore(position);
   const isBio = useStore(bio);
   useGSAP(() => {
-    gsap.from(`#light`, { scale: 0, duration: 0.8, opacity: 0 });
+    gsap.from(`#light1`, { scale: 0, duration: 0.8, opacity: 0 });
     gsap.from(`#code`, { y: -100, duration: 1, opacity: 0 });
   });
   return (
     <div className="w-[50%] xl:w-[35%] relative hidden lg:block">
       <img
-        id="light"
+        id="light1"
         src={green.src}
         alt="green"
         className="absolute scale-150"
       />
       <img
-        id="light"
+        id="light1"
         src={blue.src}
         alt="blue"
         className="absolute top-[-10rem] scale-150 left-[-15rem]"

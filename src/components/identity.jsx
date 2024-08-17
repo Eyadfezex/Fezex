@@ -8,6 +8,7 @@ import { TypeAnimation } from "react-type-animation";
 const Identity = () => {
   useGSAP(() => {
     gsap.from("#identity", { y: 100, duration: 1 });
+    gsap.from(`#light`, { scale: 0, duration: 0.8, opacity: 0 });
   });
   const isName = useStore(name);
   const isPosition = useStore(position);
@@ -20,17 +21,19 @@ const Identity = () => {
       <img
         src={green.src}
         alt="green"
-        className="absolute w-[30rem] top-[-2rem] lg:hidden"
+        id="light"
+        className="absolute w-[30rem] scale-150 top-[-2rem] lg:hidden"
       />
       <img
         src={blue.src}
         alt="blue"
-        className="absolute w-[30rem] top-[-7rem] left-[-7rem] lg:hidden"
+        id="light"
+        className="absolute w-[30rem] scale-150 top-[-7rem] left-[-7rem] lg:hidden"
       />
       <div className="relative">
         <p className="capitalize text-[18px]">hi all. i am </p>
         <p className="capitalize text-[62px]">{isName}</p>
-        <p className="lg:text-at capitalize text-[20px] lg:text-[32px] ">
+        <p className=" text-[#43D9AD] lg:text-at capitalize text-[20px] lg:text-[32px] ">
           &gt;
           <TypeAnimation
             sequence={[`${isPosition}`, 100]}
