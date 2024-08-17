@@ -5,7 +5,7 @@ const path = Astro.url.pathname;
 
 <a
   href={to}
-  class={`col-span-1 hover:text-white text-Code text-center bg-background flex justify-center items-center after:bg-btn after:h-0.5 after:absolute after:bottom-0 after:left-0 relative  after:hover:w-full duration-150 after:duration-300 ${path.match(to) ? "text-white after:w-full" : "after:w-0"} `}
+  class={`col-span-1 w-full hover:before:w-full hover:text-white text-Code text-center bg-background flex justify-center items-center before:bg-btn before:h-0.5 before:absolute before:bottom-0 before:left-0 relative  duration-150 before:duration-300 ${path.match(to) ? "text-white before:w-full" : "before:w-0"} `}
 >
   {label}
 </a>
