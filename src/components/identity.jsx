@@ -1,14 +1,22 @@
 import { useStore } from "@nanostores/react";
 import { bio, name, position } from "../Store";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import green from "../../public/green.png";
 import blue from "../../public/blue.png";
 import { TypeAnimation } from "react-type-animation";
 const Identity = () => {
+  useGSAP(() => {
+    gsap.from("#identity", { y: 100, duration: 1 });
+  });
   const isName = useStore(name);
   const isPosition = useStore(position);
   const isBio = useStore(bio);
   return (
-    <div className="text-white font-fira w-[100%] md:w-[60%] lg:w-[40%] xl:w-[30%] relative">
+    <div
+      id="identity"
+      className="text-white font-fira w-[100%] md:w-[60%] lg:w-[40%] xl:w-[30%] relative"
+    >
       <img
         src={green.src}
         alt="green"

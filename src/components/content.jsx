@@ -9,18 +9,24 @@ const ContentJson = () => {
   const isPosition = useStore(position);
   const isBio = useStore(bio);
   useGSAP(() => {
-    gsap.from(`#light`, { scale: 0, duration: 0.8 });
+    gsap.from(`#light`, { scale: 0, duration: 0.8, opacity: 0 });
+    gsap.from(`#code`, { y: -100, duration: 1, opacity: 0 });
   });
   return (
     <div className="w-[50%] xl:w-[35%] relative hidden lg:block">
-      <img id="light" src={green.src} alt="green" className="absolute" />
+      <img
+        id="light"
+        src={green.src}
+        alt="green"
+        className="absolute scale-150"
+      />
       <img
         id="light"
         src={blue.src}
         alt="blue"
-        className="absolute top-[-10rem] left-[-15rem]"
+        className="absolute top-[-10rem] scale-150 left-[-15rem]"
       />
-      <div className="rounded-lg bg-Cbg p-[1em] relative w-[70%] ">
+      <div id="code" className="rounded-lg bg-Cbg p-[1em] relative w-[70%] ">
         <p className="text-Code font-fira">
           <span>
             <span className="text-var">const </span>
