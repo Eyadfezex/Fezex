@@ -2,7 +2,7 @@ import { useStore } from "@nanostores/react";
 import { bio, name, position } from "../Store";
 import green from "../../public/green.png";
 import blue from "../../public/blue.png";
-
+import { TypeAnimation } from "react-type-animation";
 const Identity = () => {
   const isName = useStore(name);
   const isPosition = useStore(position);
@@ -22,10 +22,15 @@ const Identity = () => {
       <div className="relative">
         <p className="capitalize text-[18px]">hi all. i am </p>
         <p className="capitalize text-[62px]">{isName}</p>
-        <p className="capitalize text-[#43D9AD] lg:text-at text-[20px] lg:text-[32px]">
-          &gt; {isPosition}
+        <p className="lg:text-at capitalize text-[20px] lg:text-[32px] ">
+          &gt;
+          <TypeAnimation
+            sequence={[`${isPosition}`, 100]}
+            wrapper="span"
+            speed={2}
+            cursor="true"
+          />
         </p>
-        <br />
         <br />
         <p className="text-Code">
           /* <br />
