@@ -2,19 +2,31 @@ import { useStore } from "@nanostores/react";
 import { bio, name, position } from "../Store";
 import green from "../../public/green.png";
 import blue from "../../public/blue.png";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 const ContentJson = () => {
   const isName = useStore(name);
   const isPosition = useStore(position);
   const isBio = useStore(bio);
+  useGSAP(() => {
+    gsap.from(`#light1`, { scale: 0, duration: 0.8, opacity: 0 });
+    gsap.from(`#code`, { y: -100, duration: 1, opacity: 0 });
+  });
   return (
     <div className="w-[50%] xl:w-[35%] relative hidden lg:block">
-      <img src={green.src} alt="green" className="absolute" />
       <img
-        src={blue.src}
+        id="light1"
+        src={green.src}
         alt="green"
-        className="absolute top-[-10rem] left-[-15rem]"
+        className="absolute scale-150"
       />
-      <div className="rounded-lg bg-Cbg p-[1em] relative w-[70%] ">
+      <img
+        id="light1"
+        src={blue.src}
+        alt="blue"
+        className="absolute top-[-10rem] scale-150 left-[-15rem]"
+      />
+      <div id="code" className="rounded-lg bg-Cbg p-[1em] relative w-[70%] ">
         <p className="text-Code font-fira">
           <span>
             <span className="text-var">const </span>

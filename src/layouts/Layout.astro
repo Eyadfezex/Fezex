@@ -2,6 +2,8 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading.astro";
+import { ViewTransitions } from "astro:transitions";
+
 interface Props {
   title: string;
 }
@@ -15,12 +17,17 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="../../public/letter-f-svgrepo-com.svg"
+    />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body>
-    <!-- <Loading /> -->
+    <Loading />
     <main class="relative z-0 grid grid-rows-18 h-screen overflow-hidden">
       <Navbar name="Eyad-Ahmed" />
       <slot />
