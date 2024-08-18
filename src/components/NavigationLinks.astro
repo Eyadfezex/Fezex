@@ -1,11 +1,11 @@
 ---
-import Link from "./Link.astro";
+import Link from "./Link";
 ---
 
 <div class="hidden lg:grid grid-cols-3 col-span-3 gap-[1px] w-full">
-  <Link to="." label="_hello" />
-  <Link to="./about" label="_about-me" />
-  <Link to="./projects" label="_projects" />
+  <Link to="." label="_hello" client:only />
+  <Link to="./about" label="_about-me" client:only />
+  <Link to="./projects" label="_projects" client:only />
 </div>
 
 <style></style>

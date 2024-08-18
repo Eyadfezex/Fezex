@@ -1,5 +1,5 @@
 ---
-import Link from "./Link.astro";
+import Link from "./Link";
 import Menu from "./menu";
 import NavigationLinks from "./NavigationLinks.astro";
 const { name } = Astro.props;
@@ -27,6 +27,6 @@ const { name } = Astro.props;
     to="./contacts"
     label="_contacts-me"
     className="hidden lg:flex"
-    client:visible
+    client:only
   />
 </nav>
