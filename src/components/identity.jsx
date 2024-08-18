@@ -7,8 +7,8 @@ import blue from "../../public/blue.png";
 import { TypeAnimation } from "react-type-animation";
 const Identity = () => {
   useGSAP(() => {
-    gsap.from("#identity", { y: 100, duration: 1 });
-    gsap.from(`#light`, { scale: 0, duration: 0.8, opacity: 0 });
+    gsap.from("#identity", { opacity: 0, y: 100, duration: 1, delay: 0.8 });
+    gsap.from(`#light`, { scale: 0, duration: 0.8, opacity: 0, delay: 0.8 });
   });
   const isName = useStore(name);
   const isPosition = useStore(position);
