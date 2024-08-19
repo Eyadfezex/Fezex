@@ -11,8 +11,8 @@ import Sb from "../../public/storybook-icon-svgrepo-com.svg";
 import next from "../../public/next-js.svg";
 const ContentJson = () => {
   useGSAP(() => {
-    gsap.from(`#light1`, { scale: 0, duration: 0.8, opacity: 0, delay: 1.5 });
-    gsap.from(`#code`, { y: -100, duration: 1, opacity: 0, delay: 1.5 });
+    gsap.from(`#light1`, { scale: 0, duration: 0.8, opacity: 0, delay: 1.8 });
+    gsap.from(`#code`, { y: -100, duration: 1, opacity: 0, delay: 1.8 });
   });
   return (
     <div className="w-[50%] xl:w-[35%] relative hidden lg:block">
