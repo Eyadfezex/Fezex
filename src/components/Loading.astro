@@ -1,7 +1,3 @@
----
-
----
-
 <div
   class="absolute w-full h-full flex justify-center items-center bg-background z-10 loading"
 >
@@ -19,10 +15,14 @@
 </div>
 <script is:inline>
   const terminal = document.querySelector(".loading");
-  setTimeout(() => {
-    terminal.classList.add("hidden");
-    terminal.classList.remove("block");
-  }, 1000);
+
+  window.onload = () => {
+    setTimeout(() => {
+      terminal.classList.add("hidden");
+      terminal.classList.remove("block");
+      console.log("544");
+    }, 2000);
+  };
 </script>
 
 <style>

@@ -1,4 +1,5 @@
 import { useStore } from "@nanostores/react";
+import { useState } from "react";
 import { bio, name, position } from "../Store";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -7,12 +8,17 @@ import blue from "../../public/blue.png";
 import { TypeAnimation } from "react-type-animation";
 const Identity = () => {
   useGSAP(() => {
-    gsap.from("#identity", { opacity: 0, y: 100, duration: 1, delay: 0.8 });
-    gsap.from(`#light`, { scale: 0, duration: 0.8, opacity: 0, delay: 0.8 });
+    gsap.from("#identity", { opacity: 0, y: 100, duration: 1, delay: 1.4 });
+    gsap.from(`#light`, { scale: 0, duration: 0.8, opacity: 0, delay: 1.4 });
   });
+  const [start, setStart] = useState(false);
+  setTimeout(() => {
+    setStart(true);
+  }, 3000);
   const isName = useStore(name);
   const isPosition = useStore(position);
   const isBio = useStore(bio);
+
   return (
     <div
       id="identity"
@@ -35,12 +41,14 @@ const Identity = () => {
         <p className="capitalize text-[62px]">{isName}</p>
         <p className=" text-[#43D9AD] lg:text-at capitalize text-[20px] lg:text-[32px] ">
           &gt;
-          <TypeAnimation
-            sequence={[`${isPosition}`, 100]}
-            wrapper="span"
-            speed={2}
-            cursor="true"
-          />
+          {start && (
+            <TypeAnimation
+              sequence={[`${isPosition}`]}
+              wrapper="span"
+              speed={2}
+              cursor="true"
+            />
+          )}
         </p>
         <br />
         <p className="text-Code">

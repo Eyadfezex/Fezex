@@ -1,16 +1,18 @@
-import { useStore } from "@nanostores/react";
-import { bio, name, position } from "../Store";
 import green from "../../public/green.png";
 import blue from "../../public/blue.png";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import react from "../../public/react-svgrepo-com.svg";
+import Gsap from "../../public/gsap-greensock.svg";
+import Astro from "../../public/astro-svgrepo-com.svg";
+import Ts from "../../public/logo-ts-svgrepo-com.svg";
+import Tw from "../../public/tailwind-svgrepo-com.svg";
+import Sb from "../../public/storybook-icon-svgrepo-com.svg";
+import next from "../../public/next-js.svg";
 const ContentJson = () => {
-  const isName = useStore(name);
-  const isPosition = useStore(position);
-  const isBio = useStore(bio);
   useGSAP(() => {
-    gsap.from(`#light1`, { scale: 0, duration: 0.8, opacity: 0, delay: 0.8 });
-    gsap.from(`#code`, { y: -100, duration: 1, opacity: 0, delay: 0.8 });
+    gsap.from(`#light1`, { scale: 0, duration: 0.8, opacity: 0, delay: 1.5 });
+    gsap.from(`#code`, { y: -100, duration: 1, opacity: 0, delay: 1.5 });
   });
   return (
     <div className="w-[50%] xl:w-[35%] relative hidden lg:block">
@@ -24,56 +26,76 @@ const ContentJson = () => {
         id="light1"
         src={blue.src}
         alt="blue"
-        className="absolute top-[-10rem] scale-150 left-[-15rem]"
+        className="absolute top-[-10rem] scale-150 left-[-10rem]"
       />
-      <div id="code" className="rounded-lg bg-Cbg p-[1em] relative w-[70%] ">
-        <p className="text-Code font-fira">
-          <span>
-            <span className="text-var">const </span>
-            <span className="text-at">button </span>
-            <span className="text-var">= </span>
-            <span className="text-at">document</span>
-            <span className="text-Code">.</span>
-            <span className="text-at">querySelector</span>
-            <span className="text-Code">
-              (<span className="text-btn">'#saveBtn'</span>)
-            </span>
-          </span>
-          <br />
-          <br />
-          <span>
-            <span className="text-var">const </span>
-            <span className="text-at">identity </span>
-            <span className="text-var">= </span>
-            <span className="text-Code">
-              &#123;
-              <br />
-              <span className="text-Code">
-                &nbsp;
-                <span>
-                  <span className="text-at">name</span> :
-                  <span className=" capitalize text-btn"> "{isName}"</span>
-                </span>
-                ,
-                <br />
-                &nbsp;
-                <span>
-                  <span className="text-at">position</span> :
-                  <span className=" capitalize text-btn"> "{isPosition}"</span>
-                </span>
-                ,
-                <br />
-                &nbsp;
-                <span>
-                  <span className="text-at">bio</span> :
-                  <span className=" capitalize text-btn"> "{isBio}"</span>
-                </span>
-                ,
-              </span>
-              <br /> &#125;
-            </span>
-          </span>
-        </p>
+
+      <div id="code" className="rounded-full w-[80%] overflow-hidden relative">
+        <div className="absolute w-full h-full bg-white opacity-10 backdrop-blur-lg"></div>
+        <ul className=" border-teal-600 rounded-full border-4 p-[4rem] gap-[32px] relative justify-center flex flex-wrap ">
+          <li>
+            <a
+              href=""
+              target="_blank
+"
+            >
+              <img src={react.src} className="w-[5rem]" alt="react" />
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              target="_blank
+"
+            >
+              <img src={next.src} className="w-[5rem]" alt="next" />
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              target="_blank
+"
+            >
+              <img src={Astro.src} className="w-[5rem]" alt="astro" />
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              target="_blank
+"
+            >
+              <img src={Gsap.src} className="w-[5rem]" alt="Gsap" />
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              target="_blank
+"
+            >
+              <img src={Ts.src} className="w-[5rem]" alt="Ts" />
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              target="_blank
+"
+            >
+              <img src={Tw.src} className="w-[5rem]" alt="Tw" />
+            </a>
+          </li>
+          <li>
+            <a
+              href=""
+              target="_blank
+"
+            >
+              <img src={Sb.src} className="w-[5rem]" alt="Sb" />
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );
