@@ -2,7 +2,6 @@
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading.astro";
-import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title: string;
@@ -24,14 +23,13 @@ const { title } = Astro.props;
     />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
   </head>
   <body>
-    <Loading />
+    <!-- <Loading /> -->
     <main class="relative z-0 grid grid-rows-18 h-screen overflow-hidden">
       <Navbar name="Eyad-Ahmed" />
       <slot />
-      <Footer label="find me in:" />
+      <Footer label="find me in:" className="hidden lg:grid" />
     </main>
   </body>
 </html>

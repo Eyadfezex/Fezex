@@ -1,6 +1,6 @@
 ---
 import Link from "./Link";
-import Menu from "./menu";
+import { Menu, MenuIcon } from "./menu";
 import NavigationLinks from "./NavigationLinks.astro";
 const { name } = Astro.props;
 ---
@@ -9,15 +9,16 @@ const { name } = Astro.props;
   class="bg-Code grid relative z-10 md:grid-cols-8 lg:grid-cols-10 xl:grid-cols-12 w-full text-Code font-fira gap-[1px] py-[1px] border-x border-x-Code"
 >
   <div
-    class="bg-background border-b border-b-Code lg:border-b-0 justify-between flex items-center col-span-12 lg:col-span-2"
+    class="bg-background border-b border-b-Code lg:border-b-0 justify-between flex relative z-10 items-center col-span-12 lg:col-span-2"
   >
     <p class="text-[16px] px-2 lg:text-[14px] lg:pl-[22px]">
       {name}
     </p>
     <div class="lg:hidden">
-      <Menu client:visible />
+      <MenuIcon client:idle />
     </div>
   </div>
+  <Menu client:idle />
   <NavigationLinks />
   <div
     class="bg-background hidden lg:block col-span-2 lg:col-span-4 xl:col-span-6"
@@ -26,7 +27,7 @@ const { name } = Astro.props;
   <Link
     to="./contacts"
     label="_contacts-me"
-    className="hidden lg:flex"
-    client:only
+    className="hidden lg:flex justify-center"
+    client:load
   />
 </nav>

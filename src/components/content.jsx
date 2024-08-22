@@ -13,6 +13,7 @@ const ContentJson = () => {
   useGSAP(() => {
     gsap.from(`#light1`, { scale: 0, duration: 0.8, opacity: 0, delay: 1.8 });
     gsap.from(`#code`, { y: -100, duration: 1, opacity: 0, delay: 1.8 });
+    gsap.from(`#label`, { opacity: 0, duration: 0.8, delay: "8" });
   });
   return (
     <div className="w-[50%] xl:w-[35%] relative hidden lg:block">
@@ -29,6 +30,12 @@ const ContentJson = () => {
         className="absolute top-[-10rem] scale-150 left-[-10rem]"
       />
 
+      <span
+        id="label"
+        className="z-10 text-slate-400  capitalize font-fira font-bold text-xl absolute rotate-[35deg] left-[51%] top-[4%]"
+      >
+        click something
+      </span>
       <div id="code" className="rounded-full w-[80%] overflow-hidden relative">
         <div className="absolute w-full h-full bg-white opacity-10 backdrop-blur-lg"></div>
         <ul className=" border-teal-600 rounded-full border-4 p-[4rem] gap-[32px] relative justify-center flex flex-wrap ">

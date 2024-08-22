@@ -9,6 +9,7 @@ export default {
       },
       gridTemplateRows: {
         18: "repeat(18,minmax(0,1fr))",
+        14: "repeat(14,minmax(0,1fr))",
       },
       colors: {
         background: "#011627",
