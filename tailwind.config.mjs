@@ -6,9 +6,21 @@ export default {
       gridRow: {
         "span-16": "span 16 / span 16",
         "span-17": "span 17 / span 17",
+        "span-18": "span 18 / span 18",
+      },
+      gridColumn: {
+        "span-16": "span 16 / span 16",
+        "span-13": "span 13 / span 13",
+        "span-17": "span 17 / span 17",
+        "span-29": "span 29 / span 29",
       },
       gridTemplateRows: {
         18: "repeat(18,minmax(0,1fr))",
+        14: "repeat(14,minmax(0,1fr))",
+        20: "repeat(20,minmax(0,1fr))",
+      },
+      gridTemplateColumns: {
+        30: "repeat(30,minmax(0,1fr))",
         14: "repeat(14,minmax(0,1fr))",
       },
       colors: {

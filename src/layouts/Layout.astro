@@ -17,6 +17,11 @@ const { title } = Astro.props;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+
+    <link
       rel="icon"
       type="image/svg+xml"
       href="../../public/letter-f-svgrepo-com.svg"
@@ -25,12 +30,15 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <Loading />
+    <!-- <Loading /> -->
     <main class="relative z-0 grid grid-rows-18 h-screen overflow-hidden">
       <Navbar name="Eyad-Ahmed" />
       <slot />
       <Footer label="find me in:" className="hidden lg:grid" />
     </main>
+    <script
+      src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"
+    ></script>
   </body>
 </html>
 <style is:global>
