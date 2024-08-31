@@ -7,6 +7,7 @@ export default {
         "span-16": "span 16 / span 16",
         "span-17": "span 17 / span 17",
         "span-18": "span 18 / span 18",
+        "span-19": "span 19 / span 19",
       },
       gridColumn: {
         "span-16": "span 16 / span 16",
@@ -25,7 +26,7 @@ export default {
       },
       colors: {
         background: "#011627",
-        Code: "#607B96",
+        Code: "#607B98",
         var: "#C98BDF",
         btn: "#FEA55F",
         Cbg: "#011321",
