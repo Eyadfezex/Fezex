@@ -1,20 +1,30 @@
 import green from "../../public/green.png";
 import blue from "../../public/blue.png";
 import { useGSAP } from "@gsap/react";
+import { useStore } from "@nanostores/react";
+import { bio, name, position } from "../Store";
 import gsap from "gsap";
-import react from "../../public/react-svgrepo-com.svg";
-import Gsap from "../../public/gsap-greensock.svg";
-import Astro from "../../public/astro-svgrepo-com.svg";
-import Ts from "../../public/logo-ts-svgrepo-com.svg";
-import Tw from "../../public/tailwind-svgrepo-com.svg";
-import Sb from "../../public/storybook-icon-svgrepo-com.svg";
-import next from "../../public/next-js.svg";
+import codeStyle from "../codeStyle";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+
 const ContentJson = () => {
   useGSAP(() => {
     gsap.from(`#light1`, { scale: 0, duration: 0.8, opacity: 0, delay: 1.8 });
     gsap.from(`#code`, { y: -100, duration: 1, opacity: 0, delay: 1.8 });
-    gsap.from(`#label`, { opacity: 0, duration: 0.8, delay: "8" });
   });
+  const isName = useStore(name);
+  const isPosition = useStore(position);
+  const isBio = useStore(bio);
+
+  const code = `const content = {
+  name:"${isName}",
+
+  jobTitle:"${isPosition}",
+  
+  skills: ['javascript', 'react', 'css'],
+  
+  bio: "${isBio}"
+  }`;
   return (
     <div className="w-[50%] xl:w-[35%] relative hidden lg:block">
       <img
@@ -29,80 +39,20 @@ const ContentJson = () => {
         alt="blue"
         className="absolute top-[-10rem] scale-150 left-[-10rem]"
       />
-
-      <span
-        id="label"
-        className="z-10 text-slate-400  capitalize font-fira font-bold text-xl absolute rotate-[35deg] left-[51%] top-[4%]"
+      <div
+        id="code"
+        className="bg-background block relative border border-Code/20 rounded-xl max-w-[700px] text-wrap overflow-hidden"
       >
-        click something
-      </span>
-      <div id="code" className="rounded-full w-[80%] overflow-hidden relative">
-        <div className="absolute w-full h-full bg-white opacity-10 backdrop-blur-lg"></div>
-        <ul className=" border-teal-600 rounded-full border-4 p-[4rem] gap-[32px] relative justify-center flex flex-wrap ">
-          <li>
-            <a
-              href=""
-              target="_blank
-"
-            >
-              <img src={react.src} className="w-[5rem]" alt="react" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank
-"
-            >
-              <img src={next.src} className="w-[5rem]" alt="next" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank
-"
-            >
-              <img src={Astro.src} className="w-[5rem]" alt="astro" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank
-"
-            >
-              <img src={Gsap.src} className="w-[5rem]" alt="Gsap" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank
-"
-            >
-              <img src={Ts.src} className="w-[5rem]" alt="Ts" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank
-"
-            >
-              <img src={Tw.src} className="w-[5rem]" alt="Tw" />
-            </a>
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank
-"
-            >
-              <img src={Sb.src} className="w-[5rem]" alt="Sb" />
-            </a>
-          </li>
-        </ul>
+        <SyntaxHighlighter
+          language="javascript"
+          lineProps={{
+            style: { wordBreak: "break-all", whiteSpace: "pre-wrap" },
+          }}
+          wrapLines={true}
+          style={codeStyle}
+        >
+          {code}
+        </SyntaxHighlighter>
       </div>
     </div>
   );
