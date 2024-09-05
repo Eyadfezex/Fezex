@@ -20,9 +20,9 @@ const Accordion = ({ order, color, heading, Children }) => {
           >
             <path
               stroke="currentColor"
-              stroke-Linecap="round"
-              stroke-Linejoin="round"
-              stroke-Width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M9 5 5 1 1 5"
             />
           </svg>

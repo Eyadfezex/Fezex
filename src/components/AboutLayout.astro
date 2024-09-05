@@ -3,6 +3,7 @@ import { BsFillTerminalFill } from "react-icons/bs";
 import { IoPersonCircle } from "react-icons/io5";
 import { RiGamepadFill } from "react-icons/ri";
 import FileStructure from "./FileStructure";
+import Code from "./Code";
 ---
 
 <div class="bg-Code grid gap-[1px] grid-cols-30 grid-rows-18 h-full">
@@ -27,7 +28,9 @@ import FileStructure from "./FileStructure";
     </a>
   </div>
   <FileStructure client:visible />
-  <div class="bg-background col-span-12 row-span-18"></div>
+  <div class="bg-background col-span-11 row-span-18">
+    <Code client:visible />
+  </div>
   <div class="bg-background col-span-13 row-span-18"></div>
 </div>
 

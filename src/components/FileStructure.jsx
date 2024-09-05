@@ -2,10 +2,18 @@ import Accordion from "./Accordion";
 import { FaMarkdown } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { IoCall } from "react-icons/io5";
+import { aboutSectionState } from "../Store";
+import { useStore } from "@nanostores/react";
+const File = ({ name, id }) => {
+  const handleClick = () => {
+    aboutSectionState.set(id);
+  };
 
-const File = ({ name }) => {
   return (
-    <div className="flex items-center gap-3 pl-8 pt-1">
+    <div
+      className="flex items-center gap-3 pl-8 pt-1 cursor-pointer"
+      onClick={handleClick}
+    >
       <FaMarkdown />
       <p>{name}</p>
     </div>
@@ -14,7 +22,7 @@ const File = ({ name }) => {
 
 const FileStructure = () => {
   return (
-    <div className="bg-Code col-span-4 row-span-18 grid grid-rows-20 gap-[1px] font-fira text-Code ">
+    <div className="bg-Code col-span-5 row-span-18 grid grid-rows-20 gap-[1px] font-fira text-Code ">
       <div className="row-span-1 bg-background flex items-center pl-3">
         <p className="text-white">personal-info</p>
       </div>
@@ -30,8 +38,8 @@ const FileStructure = () => {
             heading="bio"
             Children={
               <>
-                <File name={"about me"} />
-                <File name={"about me"} />
+                <File name={"about me"} id="about" />
+                <File name={"skills"} id="skills" />
               </>
             }
           />
@@ -41,8 +49,7 @@ const FileStructure = () => {
             heading="interests"
             Children={
               <>
-                <File name={"about me"} />
-                <File name={"about me"} />
+                <File name={"hobbies"} id="hobbies" />
               </>
             }
           />
@@ -52,8 +59,7 @@ const FileStructure = () => {
             heading="education"
             Children={
               <>
-                <File name={"about me"} />
-                <File name={"about me"} />
+                <File name={"education"} id="education" />
               </>
             }
           />
